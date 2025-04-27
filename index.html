@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide des Plantes d'Intérieur | Yiuno</title>
+    
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config - Must be after Tailwind import but before Alpine -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'yiuno': {
+                            'header': '#f4f1ea',
+                            'body': '#fbfaf7',
+                            'text': '#2C2E41',
+                            'green': '#A6D6C3',
+                            'yellow': '#FBD38D',
+                            'coral': '#F7A69A',
+                            'purple': '#C6B6E0'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Alpine.js -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <!-- Custom JS -->
+    <script defer src="assets/js/main.js"></script>
+</head>
+
+<body class="bg-yiuno-body text-yiuno-text">
+    <!-- Navigation Sticky -->
+    <nav x-data="{ show: false }" 
+         class="sticky top-0 bg-yiuno-header/95 backdrop-blur-sm z-50 shadow-sm"
+         @scroll.window="show = window.pageYOffset > 100">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <img src="assets/img/logo-yiuno.svg" alt="Yiuno" class="h-8">
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#besoin" class="text-yiuno-text hover:text-yiuno-green transition-colors">BESOIN</a>
+                    <a href="#comprendre" class="text-yiuno-text hover:text-yiuno-yellow transition-colors">COMPRENDRE</a>
+                    <a href="#agir" class="text-yiuno-text hover:text-yiuno-coral transition-colors">AGIR</a>
+                    <a href="#impact" class="text-yiuno-text hover:text-yiuno-purple transition-colors">IMPACT</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Principal -->
+    <header class="bg-yiuno-header py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-6">
+                Choisir l'essentiel pour des plantes en bonne santé
+            </h1>
+            <p class="text-xl md:text-2xl text-center text-gray-600 max-w-3xl mx-auto">
+                Guide complet pour comprendre, choisir et prendre soin de vos plantes d'intérieur
+            </p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12 max-w-6xl">
+        <!-- Module BESOIN -->
+        <section id="besoin" class="mb-24">
+            <div class="flex items-center space-x-3 mb-8">
+                <span class="text-3xl">🌱</span>
+                <h2 class="text-3xl font-bold">Pourquoi mieux choisir ses plantes d'intérieur ?</h2>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 shadow-sm hover:scale-[1.01] transition-transform duration-300">
+                <div class="prose prose-lg max-w-none">
+                    <div class="space-y-6 my-12">
+                        <div class="transform hover:scale-105 transition-transform duration-300">
+                            <div class="bg-gradient-to-r from-yiuno-yellow/20 to-yiuno-coral/20 p-8 rounded-2xl border-l-4 border-yiuno-yellow shadow-sm">
+                                <p class="text-2xl font-medium italic text-yiuno-text leading-relaxed mb-0">
+                                    Tes plantes apprennent le lâcher-prise mieux que toi ?
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="transform hover:scale-105 transition-transform duration-300">
+                            <div class="bg-gradient-to-r from-yiuno-coral/20 to-yiuno-purple/20 p-8 rounded-2xl border-l-4 border-yiuno-coral shadow-sm">
+                                <p class="text-2xl font-medium italic text-yiuno-text leading-relaxed mb-0">
+                                    Ton pot de ficus est devenu un Airbnb à moucherons ?
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="transform hover:scale-105 transition-transform duration-300">
+                            <div class="bg-gradient-to-r from-yiuno-purple/20 to-yiuno-green/20 p-8 rounded-2xl border-l-4 border-yiuno-purple shadow-sm">
+                                <p class="text-2xl font-medium italic text-yiuno-text leading-relaxed mb-0">
+                                    Tu te sens prêt à rentrer dans une relation sérieuse... avec ta monstera ?
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="mb-8">
+                        Rassure-toi : contrairement à ce que dirait ton ex, ce n'est pas toi le problème (ou presque).
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-yiuno-green/10 p-6 rounded-xl">
+                            <h3 class="font-semibold mb-3">Faire des économies</h3>
+                            <p>Transformer ton domicile d'aile de soins palliatifs en nursery pour plantes</p>
+                        </div>
+                        
+                        <div class="bg-yiuno-yellow/10 p-6 rounded-xl">
+                            <h3 class="font-semibold mb-3">Te redonner confiance</h3>
+                            <p>Parce qu'entretenir la vie, parfois, c'est plus simple que de répondre à tes messages</p>
+                        </div>
+                        
+                        <div class="bg-yiuno-coral/10 p-6 rounded-xl">
+                            <h3 class="font-semibold mb-3">Faire ta part</h3>
+                            <p>Parce que planter un arbre c'est bien, mais garder ton ficus en vie, c'est déjà un excellent début</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Module COMPRENDRE -->
+        <section id="comprendre" class="mb-24">
+            <div class="flex items-center space-x-3 mb-8">
+                <span class="text-3xl">🌱</span>
+                <h2 class="text-3xl font-bold">Pourquoi mes plantes ne survivent pas... et comment changer ça ?</h2>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 shadow-sm">
+                <p class="text-lg mb-12">
+                    Bien s'occuper d'une plante, ce n'est pas un talent mystique réservé à quelques élus :
+                    c'est avant tout une affaire de connaissances et d'adaptation.
+                </p>
+
+                <!-- Questions mises en évidence -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                    <div class="bg-yiuno-yellow/5 p-6 rounded-xl border-l-4 border-yiuno-yellow hover:transform hover:scale-[1.02] transition-all duration-300 cursor-pointer">
+                        <h3 class="text-xl font-semibold mb-2 text-yiuno-text">❓ Tes plantes font une belle croissance... puis une grève générale ?</h3>
+                        <p class="text-gray-600">Découvre pourquoi tes plantes passent du mode croissance au mode survie.</p>
+                    </div>
+
+                    <div class="bg-yiuno-coral/5 p-6 rounded-xl border-l-4 border-yiuno-coral hover:transform hover:scale-[1.02] transition-all duration-300 cursor-pointer">
+                        <h3 class="text-xl font-semibold mb-2 text-yiuno-text">❓ Tu n'arrives pas à trouver le juste milieu entre care et laisser-vivre ?</h3>
+                        <p class="text-gray-600">Apprends à doser tes soins comme un pro.</p>
+                    </div>
+
+                    <div class="bg-yiuno-green/5 p-6 rounded-xl border-l-4 border-yiuno-green hover:transform hover:scale-[1.02] transition-all duration-300 cursor-pointer">
+                        <h3 class="text-xl font-semibold mb-2 text-yiuno-text">❓ Ton salon ressemble à un écosystème d'insectes improvisé ?</h3>
+                        <p class="text-gray-600">Solutions naturelles pour un intérieur zen et équilibré.</p>
+                    </div>
+
+                    <div class="bg-yiuno-purple/5 p-6 rounded-xl border-l-4 border-yiuno-purple hover:transform hover:scale-[1.02] transition-all duration-300 cursor-pointer">
+                        <h3 class="text-xl font-semibold mb-2 text-yiuno-text">❓ Tu veux passer du mode survie au mode épanouissement ?</h3>
+                        <p class="text-gray-600">Guide étape par étape pour des plantes rayonnantes.</p>
+                    </div>
+                </div>
+
+                <!-- Accordéons détaillés -->
+                <div x-data="{ activeTab: null }" class="space-y-4">
+                    <div class="border border-yiuno-yellow/20 rounded-xl overflow-hidden">
+                        <button @click="activeTab = activeTab === 1 ? null : 1"
+                                class="w-full p-6 text-left font-semibold flex justify-between items-center hover:bg-yiuno-yellow/5 transition-colors">
+                            <div class="flex items-center gap-4">
+                                <span class="text-yiuno-yellow text-2xl">01</span>
+                                <div>
+                                    <h3 class="text-xl mb-1">Croissance puis grève générale ?</h3>
+                                    <p class="text-sm text-gray-600">Comprendre le cycle d'adaptation</p>
+                                </div>
+                            </div>
+                            <span x-text="activeTab === 1 ? '−' : '+'" 
+                                  class="text-2xl text-yiuno-yellow font-light"></span>
+                        </button>
+                        
+                        <div x-show="activeTab === 1" 
+                             x-transition
+                             class="p-6 bg-yiuno-yellow/5 border-t border-yiuno-yellow/20">
+                            <div class="prose prose-lg max-w-none">
+                                <p class="mb-4">Beaucoup de plantes vendues en grande distribution sont poussées sous conditions "dopées".</p>
+                                <ul class="space-y-3 list-none pl-0">
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-yiuno-yellow">→</span>
+                                        <span>Préférer l'achat de plantons : ils s'adaptent mieux à ton intérieur</span>
+                                    </li>
+                                    <li class="flex items-center gap-2">
+                                        <span class="text-yiuno-yellow">→</span>
+                                        <span>Donner du temps d'adaptation avant de trop manipuler/rempoter</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Répéter le même pattern pour les autres questions -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Module AGIR -->
+        <section id="agir" class="mb-24">
+            <div class="flex items-center space-x-3 mb-8">
+                <span class="text-3xl">🌱</span>
+                <h2 class="text-3xl font-bold">Comment apprendre à mieux s'occuper de ses plantes ?</h2>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 shadow-sm">
+                <p class="text-lg mb-8">
+                    Pas besoin d'être né avec la main verte pour progresser.
+                    Que tu sois au tout début ou déjà en collocation harmonieuse avec ta monstera, il existe des ressources adaptées à ton rythme et à ton quotidien.
+                </p>
+
+                <!-- Grille des sections -->
+                <div class="space-y-8">
+                    <!-- Section S'informer -->
+                    <div x-data="tabs">
+                        <div x-data="{ open: false }" class="border border-yiuno-coral/20 rounded-xl overflow-hidden">
+                            <button @click="setActiveTab(1)"
+                                    class="w-full p-6 text-left font-semibold flex justify-between items-center bg-yiuno-coral/5">
+                                <div>
+                                    <h3 class="text-2xl mb-2">1. S'informer</h3>
+                                    <p class="text-gray-600">Des ressources adaptées à chaque niveau</p>
+                                </div>
+                                <span x-text="activeTab === 1 ? '−' : '+'" class="text-yiuno-coral text-xl"></span>
+                            </button>
+                            
+                            <div x-show="activeTab === 1" 
+                                 x-transition:enter="accordion-enter"
+                                 x-transition:enter-start="accordion-enter-start"
+                                 x-transition:enter-end="accordion-enter-end"
+                                 x-transition:leave="accordion-leave"
+                                 x-transition:leave-start="accordion-leave-start"
+                                 x-transition:leave-end="accordion-leave-end"
+                                 class="p-6 border-t border-yiuno-coral/20">
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                    <div class="space-y-4">
+                                        <h4 class="font-semibold">Débutant</h4>
+                                        <ul class="space-y-2 text-gray-600">
+                                            <li>• Vidéos simples sur l'arrosage</li>
+                                            <li>• Infographiques des erreurs courantes</li>
+                                            <li>• Guides de base</li>
+                                        </ul>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <h4 class="font-semibold">Intermédiaire</h4>
+                                        <ul class="space-y-2 text-gray-600">
+                                            <li>• Cours en ligne spécialisés</li>
+                                            <li>• Tutoriels de diagnostic</li>
+                                            <li>• Guides avancés</li>
+                                        </ul>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <h4 class="font-semibold">Avancé</h4>
+                                        <ul class="space-y-2 text-gray-600">
+                                            <li>• Formations sur la propagation</li>
+                                            <li>• Techniques de bouturage</li>
+                                            <li>• Compostage urbain</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section Choisir son substrat -->
+                    <div x-data="tabs">
+                        <div x-data="{ open: false }" class="border border-yiuno-yellow/20 rounded-xl overflow-hidden">
+                            <button @click="setActiveTab(2)"
+                                    class="w-full p-6 text-left font-semibold flex justify-between items-center bg-yiuno-yellow/5">
+                                <div>
+                                    <h3 class="text-2xl mb-2">2. Choisir son substrat</h3>
+                                    <p class="text-gray-600">La base d'une plante en bonne santé</p>
+                                </div>
+                                <span x-text="activeTab === 2 ? '−' : '+'" class="text-yiuno-yellow text-xl"></span>
+                            </button>
+                            
+                            <div x-show="activeTab === 2" 
+                                 x-transition:enter="accordion-enter"
+                                 x-transition:enter-start="accordion-enter-start"
+                                 x-transition:enter-end="accordion-enter-end"
+                                 x-transition:leave="accordion-leave"
+                                 x-transition:leave-start="accordion-leave-start"
+                                 x-transition:leave-end="accordion-leave-end"
+                                 class="p-6 border-t border-yiuno-yellow/20">
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                    <div class="space-y-4">
+                                        <h4 class="font-semibold">Débutant</h4>
+                                        <ul class="space-y-2 text-gray-600">
+                                            <li>• Packs tout prêts</li>
+                                            <li>• Terreau universel</li>
+                                        </ul>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <h4 class="font-semibold">Intermédiaire</h4>
+                                        <ul class="space-y-2 text-gray-600">
+                                            <li>• Kits modulables</li>
+                                            <li>• Mélanges personnalisés</li>
+                                        </ul>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <h4 class="font-semibold">Avancé</h4>
+                                        <ul class="space-y-2 text-gray-600">
+                                            <li>• Substrats spécialisés</li>
+                                            <li>• Compostage maison</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section Choisir ses pots et outils -->
+                    <div x-data="tabs">
+                        <div x-data="{ open: false }" class="border border-yiuno-green/20 rounded-xl overflow-hidden">
+                            <button @click="setActiveTab(3)"
+                                    class="w-full p-6 text-left font-semibold flex justify-between items-center bg-yiuno-green/5">
+                                <div>
+                                    <h3 class="text-2xl mb-2">3. Choisir ses pots et outils</h3>
+                                    <p class="text-gray-600">L'équipement adapté à tes besoins</p>
+                                </div>
+                                <span x-text="activeTab === 3 ? '−' : '+'" class="text-yiuno-green text-xl"></span>
+                            </button>
+                            
+                            <div x-show="activeTab === 3" 
+                                 x-transition:enter="accordion-enter"
+                                 x-transition:enter-start="accordion-enter-start"
+                                 x-transition:enter-end="accordion-enter-end"
+                                 x-transition:leave="accordion-leave"
+                                 x-transition:leave-start="accordion-leave-start"
+                                 x-transition:leave-end="accordion-leave-end"
+                                 class="p-6 border-t border-yiuno-green/20">
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                    <div class="space-y-4">
+                                        <h4 class="font-semibold">Débutant</h4>
+                                        <ul class="space-y-2 text-gray-600">
+                                            <li>• Pots standards percés</li>
+                                            <li>• Arrosoirs simples</li>
+                                        </ul>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <h4 class="font-semibold">Intermédiaire</h4>
+                                        <ul class="space-y-2 text-gray-600">
+                                            <li>• Pots spécialisés</li>
+                                            <li>• Kits d'outils basiques</li>
+                                        </ul>
+                                    </div>
+                                    <div class="space-y-4">
+                                        <h4 class="font-semibold">Avancé</h4>
+                                        <ul class="space-y-2 text-gray-600">
+                                            <li>• Pots respirants innovants</li>
+                                            <li>• Systèmes auto-irrigants</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Module IMPACT -->
+        <section id="impact" class="mb-24">
+            <div class="flex items-center space-x-3 mb-8">
+                <span class="text-3xl">🌱</span>
+                <h2 class="text-3xl font-bold">Quel impact positif quand tu prends soin de tes plantes ?</h2>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 shadow-sm">
+                <p class="text-lg mb-8">
+                    Prendre soin d'une plante, ce n'est pas seulement ajouter un peu de vert à ton intérieur.
+                    C'est aussi contribuer, à ta mesure, à un cercle vertueux : pour toi, pour ton environnement immédiat, et pour la planète.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Impact personnel -->
+                    <div class="bg-yiuno-purple/10 p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold mb-4">Impact sur toi-même</h3>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start gap-2">
+                                <span class="text-yiuno-purple">•</span>
+                                <span>Amélioration du bien-être mental</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-yiuno-purple">•</span>
+                                <span>Sensation d'accomplissement</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-yiuno-purple">•</span>
+                                <span>Connexion au vivant</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Impact environnement -->
+                    <div class="bg-yiuno-green/10 p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold mb-4">Impact sur ton environnement</h3>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start gap-2">
+                                <span class="text-yiuno-green">•</span>
+                                <span>Purification naturelle de l'air</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-yiuno-green">•</span>
+                                <span>Amélioration de l'humidité ambiante</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-yiuno-green">•</span>
+                                <span>Création d'espaces apaisants</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Impact global -->
+                    <div class="bg-yiuno-coral/10 p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold mb-4">Impact à l'échelle plus large</h3>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start gap-2">
+                                <span class="text-yiuno-coral">•</span>
+                                <span>Réduction des déchets</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-yiuno-coral">•</span>
+                                <span>Meilleure circularité</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-yiuno-coral">•</span>
+                                <span>Sensibilisation de l'entourage</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-yiuno-header py-12">
+        <div class="container mx-auto px-4 text-center max-w-4xl">
+            <h2 class="text-2xl md:text-3xl font-semibold mb-6">
+                Tu es prêt à donner vie à ton chez-toi ?
+            </h2>
+            <p class="text-gray-600">
+                Prendre soin d'une plante, c'est plus qu'un loisir ou un caprice décoratif.
+                C'est apprendre à créer un espace vivant, respirant — et, quelque part, à prendre soin de soi.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
